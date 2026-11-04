@@ -1,3 +1,3 @@
-# Class 6 Demo
+# Lab 5
 
-This is a demonstration of creating a local repo, pushing to a remote repo, and deploying it via Pages.
+This is Jayden's Lab 5 for IM318

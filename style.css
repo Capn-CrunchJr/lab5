@@ -174,6 +174,9 @@
   }
 }
 @layer utilities {
+  .float-right {
+    float: right;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -191,6 +194,9 @@
     @media (width >= 96rem) {
       max-width: 96rem;
     }
+  }
+  .m-\[2vw\] {
+    margin: 2vw;
   }
   .mx-auto {
     margin-inline: auto;
@@ -210,11 +216,23 @@
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
+  .w-20 {
+    width: calc(var(--spacing) * 20);
+  }
+  .w-30 {
+    width: calc(var(--spacing) * 30);
+  }
   .w-\[2vw\] {
     width: 2vw;
   }
   .w-\[8vw\] {
     width: 8vw;
+  }
+  .w-\[10vw\] {
+    width: 10vw;
   }
   .w-\[20vw\] {
     width: 20vw;
@@ -224,6 +242,9 @@
   }
   .w-\[30vw\] {
     width: 30vw;
+  }
+  .w-\[100\%\] {
+    width: 100%;
   }
   .max-w-\[70vw\] {
     max-width: 70vw;
@@ -252,8 +273,17 @@
   .items-center {
     align-items: center;
   }
+  .justify-around {
+    justify-content: space-around;
+  }
   .justify-between {
     justify-content: space-between;
+  }
+  .justify-evenly {
+    justify-content: space-evenly;
+  }
+  .justify-items-center {
+    justify-items: center;
   }
   .gap-3 {
     gap: calc(var(--spacing) * 3);
@@ -263,6 +293,12 @@
   }
   .gap-10 {
     gap: calc(var(--spacing) * 10);
+  }
+  .gap-12 {
+    gap: calc(var(--spacing) * 12);
+  }
+  .gap-20 {
+    gap: calc(var(--spacing) * 20);
   }
   :where(.space-x-2 > :not(:last-child)) {
     --tw-space-x-reverse: 0;
@@ -328,17 +364,41 @@
   .py-\[2vw\] {
     padding-block: 2vw;
   }
+  .pt-\[1vh\] {
+    padding-top: 1vh;
+  }
+  .pt-\[2vh\] {
+    padding-top: 2vh;
+  }
+  .pt-\[3vh\] {
+    padding-top: 3vh;
+  }
   .pt-\[4vw\] {
     padding-top: 4vw;
   }
   .pr-\[2vw\] {
     padding-right: 2vw;
   }
+  .pb-0\.5 {
+    padding-bottom: calc(var(--spacing) * 0.5);
+  }
+  .pb-1 {
+    padding-bottom: var(--spacing);
+  }
+  .pb-\[1vh\] {
+    padding-bottom: 1vh;
+  }
+  .pb-\[2vw\] {
+    padding-bottom: 2vw;
+  }
   .pb-\[4vw\] {
     padding-bottom: 4vw;
   }
   .pl-\[2vw\] {
     padding-left: 2vw;
+  }
+  .text-right {
+    text-align: right;
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -359,6 +419,10 @@
   .leading-6 {
     --tw-leading: calc(var(--spacing) * 6);
     line-height: calc(var(--spacing) * 6);
+  }
+  .leading-7 {
+    --tw-leading: calc(var(--spacing) * 7);
+    line-height: calc(var(--spacing) * 7);
   }
   .leading-8 {
     --tw-leading: calc(var(--spacing) * 8);

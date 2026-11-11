@@ -8,13 +8,17 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --text-5xl: 3rem;
-    --text-5xl--line-height: 1;
+    --color-gray-50: oklch(98.5% 0.002 247.839);
+    --color-gray-600: oklch(44.6% 0.03 256.802);
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-2xl: 1.5rem;
+    --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-secondary: navy;
-    --color-primary: #dddddd;
+    --color-lightGray: #A3B3B8;
+    --color-lightBluishGray: #5E7C85;
   }
 }
 @layer base {
@@ -166,34 +170,125 @@
   }
 }
 @layer utilities {
-  .m-\[5vw\] {
-    margin: 5vw;
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
   }
-  .bg-secondary {
-    background-color: var(--color-secondary);
+  .mx-auto {
+    margin-inline: auto;
   }
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
+  .w-6 {
+    width: calc(var(--spacing) * 6);
+  }
+  .max-w-\[800px\] {
+    max-width: 800px;
+  }
+  .max-w-\[1000px\] {
+    max-width: 1000px;
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .gap-10 {
+    gap: calc(var(--spacing) * 10);
+  }
+  :where(.space-x-2 > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
+  }
+  :where(.space-x-10 > :not(:last-child)) {
+    --tw-space-x-reverse: 0;
+    margin-inline-start: calc(calc(var(--spacing) * 10) * var(--tw-space-x-reverse));
+    margin-inline-end: calc(calc(var(--spacing) * 10) * calc(1 - var(--tw-space-x-reverse)));
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .bg-lightBluishGray {
+    background-color: var(--color-lightBluishGray);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .px-2 {
+    padding-inline: calc(var(--spacing) * 2);
+  }
+  .py-1 {
+    padding-block: var(--spacing);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .pt-\[4vw\] {
+    padding-top: 4vw;
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
-  .text-primary {
-    color: var(--color-primary);
+  .text-gray-50 {
+    color: var(--color-gray-50);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
   }
   @media (width >= 64rem) {
-    .lg\:mx-auto {
-      margin-inline: auto;
-    }
-    .lg\:my-\[6vw\] {
-      margin-block: 6vw;
-    }
-    .lg\:max-w-3\/4 {
-      max-width: calc(3 / 4 * 100%);
+    .lg\:flex {
+      display: flex;
     }
   }
+}
+@property --tw-space-x-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -202,6 +297,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-space-x-reverse: 0;
       --tw-font-weight: initial;
     }
   }
